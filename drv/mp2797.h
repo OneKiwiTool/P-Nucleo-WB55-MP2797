@@ -1,0 +1,189 @@
+#ifndef __MP2797_H
+#define __MP2797_H
+
+#define MP2797_ADDR             0x01
+
+/* Cell Configuration */
+#define CELLS_CTRL              0x00
+/* IC State Control */
+#define PWR_STATUS              0x01
+#define STB_STATUS              0x02
+#define LOAD_CHARGER_STATUS     0x03
+#define ACT_CFG                 0x05
+#define STB_CFG                 0x06
+#define SAFE_CFG                0x07
+#define RGL_CFG                 0x08
+#define LOAD_CHARGER_CFG        0x09
+/* Pin and GPIO */
+#define GPIO_STATUS             0x0A
+#define GPIO_OUT                0x0B
+#define GPIO_CFG                0X0C
+#define PINS_CFG                0x0D
+/* Watchdog */
+#define WDT_STATUS              0X0E
+#define WDT_RST                 0x0F
+#define WDT_CFG                 0x10
+/* FET Driver */
+#define FET_STATUS              0X11
+#define FET_CTRL                0X12
+#define FET_MODE                0x13
+#define FET_CFG                 0x14
+/* Interrupt */
+#define RD_INT0                 0x15
+#define RD_INT1                 0x16
+#define INT0_CLR                0x17
+#define INT1_CLR                0x18
+#define INT0_EN                 0x19
+#define INT1_EN                 0x1A
+#define INT_TYPE0               0x1B
+#define INT_TYPE1               0x1C
+#define INT_TYPE2               0x1D
+#define MASK_INT0               0x1E
+#define MASK_INT1               0x1F
+/* OverCurren */
+#define OC_STATUS               0x20
+#define OCFT_CTRL               0x23
+#define DSGOC_LIM               0x24
+#define DSGOC_DEG               0x25
+#define CHGOC_DEG               0x26
+/* Short Circuit */
+#define SC_STATUS               0x27
+#define SCFT_CTRL               0x2A
+#define DSGSC_CFG               0x2B
+#define CHGSC_CFG               0x2C
+/* OV-UV-Dead-Mismatch */
+#define RD_CELL_UV              0x2D
+#define RD_CELL_OV              0x2E
+#define RD_CELL_MSMT            0x2F
+#define RD_CELL_DEAD            0x30
+#define CELL_MSMT_STS           0x33
+#define PACKFT_CTRL             0x34
+#define CELLFT_CTRL             0x35
+#define CELL_HYST               0x36
+#define PACK_UV_OV              0x37
+#define CELL_UV                 0x38
+#define CELL_OV                 0x39
+#define PACK_UV                 0x3A
+#define PACK_OV                 0x3B
+#define CELL_DEAD_THR           0x3C
+#define CELL_MSMT               0x3D
+/* NTC-Die Temperature */
+#define RD_NTC_DIE              0x3E
+#define RD_V_NTC4_LR            0x3F
+#define RD_V_NTC3_LR            0x40
+#define RD_V_NTC2_LR            0x41
+#define RD_V_NTC1_LR            0x42
+#define RD_T_DIE                0x43
+#define NTC_CLR                 0x44
+#define DIE_CFG                 0x46
+#define NTC_CFG                 0x47
+#define NTCC_OTHR_DSG           0x48
+#define NTCC_UTHR_DSG           0x49
+#define NTCC_OTHR_CHG           0x4A
+#define NTCC_UTHR_CHG           0x4B
+#define NTCM_OTHR               0x4C
+#define DIE_OT                  0x4D
+/* Diagnosis */
+#define SELF_STS                0x4E
+#define RD_VA1P8                0x4F
+#define RD_VA3P3                0x50
+#define RD_VA5                  0x51
+#define RD_VASELF               0x52
+#define RD_OPENH                0x53
+#define RD_OPENL                0x54
+#define SFT_GO                  0x55
+#define SELF_CFG                0x56
+#define OPEN_CFG                0x57
+#define REGIN_UV                0x58
+#define V3P3_UV                 0x59
+#define VDD_UV                  0x5A
+#define SELF_THR                0x5B
+/* Fault and Fault Recovery */
+#define FT_STS1                 0x5D
+#define FT_STS2                 0x5E
+#define FT_CLR                  0x5F
+#define FT_REC                  0x60
+#define FT0_CFG                 0x61
+#define FT1_CFG                 0x62
+#define FT2_CFG                 0x63
+/* ADC & CC */
+#define RD_CCIRQL               0x65
+#define RD_CCIRQH               0x66
+#define RD_CCACCQL              0x67
+#define RD_CCACCQH              0x68
+#define RD_VPACKP               0x69
+#define RD_VTOP                 0x6A
+#define RD_ITOP                 0x6B
+#define RD_VCELL1               0x6C
+#define RD_ICELL1               0x6D
+#define RD_VCELL2               0x6E
+#define RD_ICELL2               0x6F
+#define RD_VCELL3               0x70
+#define RD_ICELL3               0x71
+#define RD_VCELL4               0x72
+#define RD_ICELL4               0x73
+#define RD_VCELL5               0x74
+#define RD_ICELL5               0x75
+#define RD_VCELL6               0x76
+#define RD_ICELL6               0x77
+#define RD_VCELL7               0x78
+#define RD_ICELL7               0x79
+#define RD_VCELL8               0x7A
+#define RD_ICELL8               0x7B
+#define RD_VCELL9               0x7C
+#define RD_ICELL9               0x7D
+#define RD_VCELL10              0x7E
+#define RD_ICELL10              0x7F
+#define RD_VCELL11              0x80
+#define RD_ICELL11              0x81
+#define RD_VCELL12              0x82
+#define RD_ICELL12              0x83
+#define RD_VCELL13              0x84
+#define RD_ICELL13              0x85
+#define RD_VCELL14              0x86
+#define RD_ICELL14              0x87
+#define RD_VCELL15              0x88
+#define RD_ICELL15              0x89
+#define RD_VCELL16              0x8A
+#define RD_ICELL16              0x8B
+#define RD_VNTC4                0x8C
+#define RD_VNTC3                0x8D
+#define RD_VNTC2                0x8E
+#define RD_VNTC1                0x8F
+#define RD_VGPIO3               0x90
+#define RD_VGPIO2               0x91
+#define RD_VGPIO1               0x92
+#define RD_TDIE                 0x93
+#define RD_V1P8                 0x94
+#define RD_V3P3                 0x95
+#define RD_V5                   0x96
+#define CC_STS                  0x97
+#define ADC_STS                 0x98
+#define ADC_CTRL                0x99
+#define CC_CFG                  0x9A
+#define TRIMG_IPCB              0x9B
+#define HR_SCAN0                0x9C
+#define HR_SCAN1                0x9D
+#define HR_SCAN2                0x9E
+/* Communication */
+#define SILC_INFO1              0xA0
+#define COMM_CFG                0xA3
+/* Cell Balancing */
+#define BAL_STS                 0xA4
+#define BAL_LIST                0xA5
+#define BAL_CTRL                0xA6
+#define BAL_CFG                 0xA7
+#define BAL_THR                 0xA8
+/* Memory Control */
+#define MEM_STATUS              0xB4
+#define OTP_CRC_STATUS          0xB6
+#define NVM_CRC_STATUS          0xB7
+#define OTP_STORE_CMD           0xB8
+#define STORE_CMD_ACCESS_CODE   0xB9
+#define OTP_READ_CMD            0xBA
+#define OTP_ADDRESS_REG         0xBB
+#define OTP_WDATA_REG           0xBC
+
+void mp2797_info_reg(void);
+
+#endif /* __MP2797_H */
